@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasksUnleashed.API", "MasksUnleashed.API\MasksUnleashed.API.csproj", "{EFD546C2-504C-4A89-B8F5-C37A4E14B262}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasksUnleashed.Core", "MasksUnleashed.Core\MasksUnleashed.Core.csproj", "{CAFFE4A0-B696-4C84-8065-E5353544E062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasksUnleached.Infrastructure", "MasksUnleached.Infrastructure\MasksUnleached.Infrastructure.csproj", "{67FB0E5B-67CD-457D-ABB3-5E0698A4B27E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{44B1386A-FC1C-406A-8A8A-E1877EC435A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +21,24 @@ Global
 		{EFD546C2-504C-4A89-B8F5-C37A4E14B262}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFD546C2-504C-4A89-B8F5-C37A4E14B262}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFD546C2-504C-4A89-B8F5-C37A4E14B262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFFE4A0-B696-4C84-8065-E5353544E062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFFE4A0-B696-4C84-8065-E5353544E062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFFE4A0-B696-4C84-8065-E5353544E062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFFE4A0-B696-4C84-8065-E5353544E062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67FB0E5B-67CD-457D-ABB3-5E0698A4B27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67FB0E5B-67CD-457D-ABB3-5E0698A4B27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67FB0E5B-67CD-457D-ABB3-5E0698A4B27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67FB0E5B-67CD-457D-ABB3-5E0698A4B27E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5FE360C-5659-42F3-999B-F29E7F35E8C7}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67FB0E5B-67CD-457D-ABB3-5E0698A4B27E} = {44B1386A-FC1C-406A-8A8A-E1877EC435A4}
+		{EFD546C2-504C-4A89-B8F5-C37A4E14B262} = {44B1386A-FC1C-406A-8A8A-E1877EC435A4}
+		{CAFFE4A0-B696-4C84-8065-E5353544E062} = {44B1386A-FC1C-406A-8A8A-E1877EC435A4}
 	EndGlobalSection
 EndGlobal

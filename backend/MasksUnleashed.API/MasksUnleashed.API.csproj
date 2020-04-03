@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MasksUnleached.Infrastructure\MasksUnleached.Infrastructure.csproj" />
+    <ProjectReference Include="..\MasksUnleashed.Core\MasksUnleashed.Core.csproj" />
+  </ItemGroup>
+
 
 </Project>
