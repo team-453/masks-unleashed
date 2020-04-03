@@ -24,12 +24,12 @@ steps:
   displayName: 'NPM install'
   inputs:
     command: 'install'
-    workingDir: '$(Build.BinariesDirectory)/frontend'
+    workingDir: 'frontend'
 - task: Npm@1
   displayName: 'NPM Build'
   inputs:
     command: 'custom'
-    workingDir: '$(Build.BinariesDirectory)/frontend'
+    workingDir: 'frontend'
     customCommand: 'run ci-build'
 - task: ArchiveFiles@2
   inputs:
