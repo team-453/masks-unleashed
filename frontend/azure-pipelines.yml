@@ -33,7 +33,7 @@ steps:
     customCommand: 'run ci-build'
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'frontend/dist'
+    rootFolderOrFile: 'frontend/dist/frontend'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
