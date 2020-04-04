@@ -50,7 +50,7 @@ namespace MasksUnleashed.API.Controllers
         /// <param name="recyclerId">The GUID ID of the recycler.</param>
         /// <param name="recyclingOrder">The new recycling order</param>
         /// <returns>Returns all orders of the recycler</returns>
-        [HttpPut("{recyclerId}/orders")]
+        [HttpPost("{recyclerId}/orders")]
         public Task AddOrder([FromRoute]Guid recyclerId, RecyclingOrder recyclingOrder)
         {
             throw new NotImplementedException();

@@ -25,7 +25,7 @@ namespace MasksUnleashed.API.Controllers
         /// <param name="collectorId">The ID of the collector (GUID)</param>
         /// <param name="amountOfMasks">Amount of infected masks that the collector is able to store *in total*.</param>
         /// <returns></returns>
-        [HttpPost("{collectorId}/capacity")]
+        [HttpPut("{collectorId}/capacity")]
         public Task SetStorageCapacity(Guid collectorId, int amountOfMasks)
         {
             throw new NotImplementedException();
