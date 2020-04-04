@@ -17,6 +17,7 @@ namespace MasksUnleashed.API.Controllers
             this.userService = userService;
         }
         
+        [HttpGet]
         public Task<IList<User>> Get()
         {
             return userService.GetAll();
