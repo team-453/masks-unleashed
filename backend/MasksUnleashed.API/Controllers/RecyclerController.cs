@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MasksUnleashed.Core;
 using MasksUnleashed.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,13 @@ namespace MasksUnleashed.API.Controllers
     [Route("[controller]")]
     public class RecyclerController : ControllerBase
     {
+        private readonly RecyclerService recyclerService;
+
+        public RecyclerController(RecyclerService recyclerService)
+        {
+            this.recyclerService = recyclerService;
+        }
+        
         /// <summary>
         /// Returns the amount of masks the recycler is able to recycle.
         /// </summary>
@@ -55,7 +63,7 @@ namespace MasksUnleashed.API.Controllers
         [HttpPost("{recyclerId}/orders")]
         public Task AddOrder([FromRoute]Guid recyclerId, RecyclingOrder recyclingOrder)
         {
-            throw new NotImplementedException();
+            return recyclerService.AddOrder(recyclerId, recyclingOrder);
         }
     }
 }

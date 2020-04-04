@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace MasksUnleashed.Core.Models
 {
+    [Owned]
     public class RecyclingOrder
     {
         public Guid Id { get; set; }
@@ -10,10 +12,12 @@ namespace MasksUnleashed.Core.Models
         public int MaskRecyclingCapacity { get; set; }
         public DateTime StartingDate { get; set; }
         public DateTime EndDate { get; set; }
-        public List<AcceptedRecyclingOrder> AcceptedOrders { get; set; } = new List<AcceptedRecyclingOrder>();
+        public Collection<AcceptedRecyclingOrder> AcceptedOrders { get; set; } = new Collection<AcceptedRecyclingOrder>();
 
+        [Owned]
         public class AcceptedRecyclingOrder
         {
+            public Guid Id { get; set; }
             public Guid CollectorId { get; set; }
             public string CollectorName { get; set; }
             public int MasksToDeliver { get; set; }
