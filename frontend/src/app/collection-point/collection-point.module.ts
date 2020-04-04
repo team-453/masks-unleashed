@@ -5,16 +5,24 @@ import { CollectionPointDashboardComponent } from './collection-point-dashboard/
 import { ContactDetailsFormComponent } from './contact-details-form/contact-details-form.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { RegisterComponent } from './register/register.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { CockpitComponent } from './cockpit/cockpit.component';
 
 
 @NgModule({
   declarations: [
     CollectionPointDashboardComponent,
-    ContactDetailsFormComponent
+    ContactDetailsFormComponent,
+    RegisterComponent,
+    CockpitComponent
   ],
   imports: [
     CommonModule,
     CollectionPointRoutingModule,
+    MatToolbarModule,
+    MatTabsModule,
     MatButtonModule,
     MatInputModule
   ],
