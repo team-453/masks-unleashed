@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,19 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  navLinks = [
-    {
-      path: 'user-dashboard',
-      label: 'Customer',
-    },
-    {
-      path: 'recycler-dashboard',
-      label: 'Recycler',
-    },
-    {
-      path: 'collection-point-dashboard',
-      label: 'Collection Points',
-    }
-  ];
 
+  constructor(public router: Router) {
+  }
+
+  logout() {
+    this.router.navigate(['/']);
+  }
 }
