@@ -1,8 +1,8 @@
 <mat-form-field>
   <mat-label>User</mat-label>
   <mat-select [(value)]="selectedUser">
-    <mat-option *ngFor="let user of users" [value]="user">
-      {{user.username}} ({{user.type}})
+    <mat-option *ngFor="let user of users | async" [value]="user">
+      {{user.username}} ({{user.userType}})
     </mat-option>
   </mat-select>
 </mat-form-field>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -8,23 +10,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   selectedUser: User;
+  users: Observable<User>;
 
-  users: User[] = [
-    {username: 'Matteo', type: 'Collection Point'},
-    {username: 'Esteban', type: 'Recycler'}
-  ];
-
-  constructor(private router: Router) {
+  constructor(private router: Router, httpClient: HttpClient) {
+    this.users = httpClient.get<User>('/user');
   }
 
   login() {
-    console.log(this.selectedUser);
-    const module = this.selectedUser.type === 'Recycler' ? 'recycler-dashboard' : 'collection-point-dashboard';
+    const module = this.selectedUser.userType === 'RECYCLER' ? 'recycler-dashboard' : 'collection-point-dashboard';
     this.router.navigate([module]);
   }
 }
 
 interface User {
   username: string;
-  type: string;
+  userType: string;
 }
