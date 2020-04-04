@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
-import { UserDetailsFormComponent } from './user-details-form/user-details-form.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
@@ -10,7 +9,7 @@ import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
-  declarations: [UserDashboardComponent, UserDetailsFormComponent, CollectionPointMapComponent],
+  declarations: [UserDashboardComponent, CollectionPointMapComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,
