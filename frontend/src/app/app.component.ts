@@ -6,6 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  navLinks = [
+    {
+      path: 'user-dashboard',
+      label: 'Customer',
+    },
+    {
+      path: 'recycler-dashboard',
+      label: 'Recycler',
+    },
+    {
+      path: 'collection-point-dashboard',
+      label: 'Collection Points',
+    }
+  ];
 
 }
