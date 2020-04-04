@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiInterceptor } from '../ApiInterceptor';
 
 
 @NgModule({
@@ -34,6 +36,12 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatTableModule
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true,
+    }],
   exports: [
     RecycleRoutingModule
   ]

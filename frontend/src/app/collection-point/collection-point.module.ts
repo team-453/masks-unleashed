@@ -9,11 +9,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { CollectionsComponent } from './collections/collections.component';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { ApiInterceptor } from '../ApiInterceptor';
 
 
 @NgModule({
@@ -36,6 +37,12 @@ import { MatTableModule } from '@angular/material/table';
     MatListModule,
     MatTableModule
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true,
+    }],
   exports: [
     CollectionPointRoutingModule
   ]
