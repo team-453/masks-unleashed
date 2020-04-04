@@ -3,6 +3,5 @@
     public class CollectorUser : User
     {
         public int MaskStorageCapacity { get; set; }
-
     }
 }

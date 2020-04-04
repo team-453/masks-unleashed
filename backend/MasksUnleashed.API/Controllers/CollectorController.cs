@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MasksUnleached.Infrastructure;
 using MasksUnleashed.Core;
 using MasksUnleashed.Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,12 @@ namespace MasksUnleashed.API.Controllers
     public class CollectorController : ControllerBase
     {
         private readonly UserService userService;
+        private readonly CollectorService collectorService;
 
-        public CollectorController(UserService userService)
+        public CollectorController(UserService userService, CollectorService collectorService)
         {
             this.userService = userService;
+            this.collectorService = collectorService;
         }
         
         [HttpGet]
@@ -31,8 +34,8 @@ namespace MasksUnleashed.API.Controllers
         /// <returns>Returns the storage capacity of the collector</returns>
         [HttpGet("{collectorId}/capacity")]
         public Task<int> GetStorageCapacity(Guid collectorId)
-        {
-            throw new NotImplementedException();
+        { 
+            return collectorService.GetCollectorMaskCapacity(collectorId);
         }
 
         /// <summary>

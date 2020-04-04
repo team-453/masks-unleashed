@@ -31,6 +31,8 @@ namespace MasksUnleashed.API
 
             services.AddTransient<IUsersRepository, UsersRepository>();
             services.AddTransient<UserService>();
+            services.AddTransient<CollectorService>();
+            services.AddTransient<RecyclerService>();
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
