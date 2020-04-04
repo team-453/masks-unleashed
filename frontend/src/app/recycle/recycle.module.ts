@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
     RecyclerDashboardComponent,
     ProfileComponent,
     OrdersComponent,
-    CockpitComponent
+    CockpitComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +31,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   exports: [
     RecycleRoutingModule

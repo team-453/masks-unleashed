@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,12 +7,11 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './collections.component.html',
   styleUrls: ['./collections.component.scss']
 })
-export class CollectionsComponent implements OnInit {
+export class CollectionsComponent {
   @Input()
   collectorId: string;
 
   form: any;
-
 
   previousCollections: Order[] = [
     {amount: 500, date: '11.02.2020'},
@@ -23,11 +22,6 @@ export class CollectionsComponent implements OnInit {
     this.form = this.formBuilder.group({
       collectedMasksAmount: ['', Validators.required],
     });
-  }
-
-  ngOnInit(): void {
-    this.httpClient.get(`/Collector/${this.collectorId}/capacity`)
-      .subscribe(maxCapacity => this.form.path({maxCapacity}));
   }
 
   add() {
