@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MasksUnleashed.Core;
 using MasksUnleashed.Core.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace MasksUnleashed.API.Controllers
 {
