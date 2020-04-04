@@ -7,5 +7,6 @@ namespace MasksUnleashed.Core.Interfaces
     public interface IUsersRepository
     {
         Task<IList<User>> GetAll();
+        Task<int> Insert(User user);
     }
 }

@@ -18,5 +18,10 @@ namespace MasksUnleashed.Core
         {
             return usersRepository.GetAll();
         }
+
+        public Task Register(User user)
+        {
+            return usersRepository.Insert(user);
+        }
     }
 }

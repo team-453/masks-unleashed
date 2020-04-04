@@ -9,6 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CockpitComponent } from './cockpit/cockpit.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { CockpitComponent } from './cockpit/cockpit.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     CollectionPointRoutingModule,
     MatToolbarModule,
     MatTabsModule,

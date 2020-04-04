@@ -21,5 +21,11 @@ namespace MasksUnleashed.API.Controllers
         {
             return userService.GetAll();
         }
+
+        [HttpPost]
+        public Task Register(User user)
+        {
+            return userService.Register(user);
+        }
     }
 }
