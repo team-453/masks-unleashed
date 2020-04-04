@@ -30,6 +30,7 @@ namespace MasksUnleashed.API
             services.AddControllers();
 
             services.AddTransient<IUsersRepository, UsersRepository>();
+            services.AddTransient<ICollectorRepository, CollectorRepository>();
             services.AddTransient<UserService>();
             services.AddTransient<CollectorService>();
             services.AddTransient<RecyclerService>();
