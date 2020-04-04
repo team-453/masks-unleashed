@@ -25,10 +25,8 @@ export class ProfileFormComponent implements OnInit {
   }
 
   update() {
-    const payload = {
-      amountOfMasks: this.form.value.maxCapacity
-    };
     this.httpClient
-      .put(`/Collector/${this.collectorId}/capacity`, payload);
+      .put(`/Collector/${this.collectorId}/capacity`, this.form.value.maxCapacity)
+      .subscribe();
   }
 }
