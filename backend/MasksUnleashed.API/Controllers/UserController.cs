@@ -17,12 +17,21 @@ namespace MasksUnleashed.API.Controllers
             this.userService = userService;
         }
         
+        /// <summary>
+        /// Returns all the users registered.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public Task<IList<User>> Get()
         {
             return userService.GetAll();
         }
 
+        /// <summary>
+        /// Registers a new user in the database.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         public Task Register(User user)
         {
