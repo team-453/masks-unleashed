@@ -11,13 +11,17 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { CollectionsComponent } from './collections/collections.component';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
   declarations: [
     CollectionPointDashboardComponent,
     ProfileFormComponent,
-    CockpitComponent
+    CockpitComponent,
+    CollectionsComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,9 @@ import { MatCardModule } from '@angular/material/card';
     MatTabsModule,
     MatButtonModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule,
+    MatTableModule
   ],
   exports: [
     CollectionPointRoutingModule
