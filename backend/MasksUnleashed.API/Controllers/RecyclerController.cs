@@ -16,6 +16,7 @@ namespace MasksUnleashed.API.Controllers
         /// <param name="recyclerId">ID of the Recycler (GUID)</param>
         /// <returns>Returns the amount of masks the recycler is able to recycle.</returns>
         [HttpGet("{recyclerId}/capacity")]
+        [Obsolete]
         public Task<int> GetCapacity([FromRoute]Guid recyclerId)
         {
             throw new NotImplementedException();
@@ -28,6 +29,7 @@ namespace MasksUnleashed.API.Controllers
         /// <param name="amountOfMasks">Amount of infected masks</param>
         /// <returns>Sets the amount of masks the recycler is able to recycle.</returns>
         [HttpPut("{recyclerId}/capacity")]
+        [Obsolete]
         public Task<int> SetCapacity([FromRoute]Guid recyclerId, int amountOfMasks)
         {
             throw new NotImplementedException();
