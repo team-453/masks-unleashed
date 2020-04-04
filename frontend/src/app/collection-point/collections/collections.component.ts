@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,16 +7,11 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './collections.component.html',
   styleUrls: ['./collections.component.scss']
 })
-export class CollectionsComponent {
+export class CollectionsComponent implements OnInit {
   @Input()
   collectorId: string;
-
   form: any;
-
-  previousCollections: Order[] = [
-    {amount: 500, date: '11.02.2020'},
-    {amount: 120, date: '18.03.2020'}
-  ];
+  previousCollections: Collection[] = [];
 
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
     this.form = this.formBuilder.group({
@@ -24,18 +19,28 @@ export class CollectionsComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.refreshPreviousCollections();
+  }
+
+  private refreshPreviousCollections() {
+    this.httpClient
+      .get(`/Collector/${this.collectorId}/reception`)
+      .subscribe((data: Collection[]) => this.previousCollections = data);
+  }
+
   add() {
     const payload = {
-      collectedMasksAmount: this.form.value.collectedMasksAmount
+      amountOfMasks: this.form.value.collectedMasksAmount,
+      receptionDate: new Date()
     };
-    console.log(payload);
     this.httpClient
-      .put(`/Orders/${this.collectorId}`, payload)
-      .subscribe(data => console.log('[PUT] Capacity', data));
+      .post(`/Collector/${this.collectorId}/reception`, payload)
+      .subscribe(data => this.refreshPreviousCollections());
   }
 }
 
-interface Order {
-  amount: number;
-  date: string;
+interface Collection {
+  amountOfMasks: number;
+  receptionDate: Date;
 }

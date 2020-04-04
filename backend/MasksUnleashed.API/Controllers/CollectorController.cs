@@ -49,5 +49,17 @@ namespace MasksUnleashed.API.Controllers
         {
             return collectorService.SetCollectorMaskCapacity(collectorId, amountOfMasks);
         }
+
+        [HttpPost("{collectorId}/reception")]
+        public Task AddMaskReception(Guid collectorId, DirtyMaskReception dirtyMaskReception)
+        {
+            return collectorService.AddMaskReception(collectorId, dirtyMaskReception);
+        }
+
+        [HttpGet("{collectorId}/reception")]
+        public Task<List<DirtyMaskReception>> GetMaskReceptions(Guid collectorId)
+        {
+            return collectorService.GetMaskReceptions(collectorId);
+        }
     }
 }
