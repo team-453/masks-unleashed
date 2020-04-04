@@ -1,0 +1,7 @@
+<div class="wrapper">
+
+  <agm-map [latitude]="latitude" [zoom]="zoom" [longitude]="longitude" [mapTypeId]="'hybrid'">
+    <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude" [label]="{color: 'white', text: marker.label}"></agm-marker>
+  </agm-map>
+
+</div>
