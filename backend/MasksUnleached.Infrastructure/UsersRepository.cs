@@ -16,5 +16,12 @@ namespace MasksUnleached.Infrastructure
                 return users;
             }
         }
+
+        public async Task<int> Insert(User user)
+        {
+            await using var context = new MasksUnleachedContext();
+            context.User.Add(user);
+            return await context.SaveChangesAsync();
+        }
     }
 }
