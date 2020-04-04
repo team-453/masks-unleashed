@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using MasksUnleashed.Core.Interfaces;
 using MasksUnleashed.Core.Models;
@@ -21,6 +23,13 @@ namespace MasksUnleached.Infrastructure
 
             context.Update(recycler);
             await context.SaveChangesAsync();
+        }
+
+        public async Task<List<RecyclingOrder>> GetOrders(Guid recyclerId)
+        {
+            await using var context = new MasksUnleachedContext();
+            var recycler = await context.RecyclerUsers.FindAsync(recyclerId);
+            return recycler.RecyclingOrders.ToList();
         }
     }
 }

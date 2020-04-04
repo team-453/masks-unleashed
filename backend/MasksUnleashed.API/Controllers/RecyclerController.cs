@@ -51,7 +51,7 @@ namespace MasksUnleashed.API.Controllers
         [HttpGet("{recyclerId}/orders")]
         public Task<List<RecyclingOrder>> GetOrders([FromRoute]Guid recyclerId)
         {
-            throw new NotImplementedException();
+            return recyclerService.GetOrders(recyclerId);
         }
 
         /// <summary>
