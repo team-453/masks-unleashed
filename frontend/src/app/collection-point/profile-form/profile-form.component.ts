@@ -21,7 +21,7 @@ export class ProfileFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClient.get(`/Collector/${this.collectorId}/capacity`)
-      .subscribe(maxCapacity => this.form.path({maxCapacity}));
+      .subscribe(maxCapacity => this.form.patchValue({ maxCapacity }));
   }
 
   update() {
