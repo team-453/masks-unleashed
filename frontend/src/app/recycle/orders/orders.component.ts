@@ -12,20 +12,8 @@ export class OrdersComponent implements OnInit {
 
   @Input()
   recyclerId: string;
-
   form: any;
-
-  orders: Order[] = [
-    {
-      id: 'aaa',
-      recycler: 'bbb',
-      maskRecyclingCapacity: 1000,
-      startingDate: '01.01.2020',
-      endDate: '25.01.2020',
-      acceptedRecyclingOrders: []
-    }
-  ];
-
+  orders: Order[] = [];
   editingOrder: Order;
 
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
@@ -38,8 +26,12 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.refreshOrders();
+  }
+
+  refreshOrders() {
     this.httpClient.get(`/Recycler/${this.recyclerId}/orders`)
-      .subscribe(orders => console.log('[GET] Orders', orders));
+      .subscribe((orders: Order[]) => this.orders = orders);
   }
 
   add() {
@@ -52,7 +44,7 @@ export class OrdersComponent implements OnInit {
     };
     this.httpClient
       .post(`/Recycler/${this.recyclerId}/orders`, payload)
-      .subscribe(data => console.log('[POST] Orders', data));
+      .subscribe(data => this.refreshOrders());
     this.form.reset();
   }
 
