@@ -27,7 +27,7 @@ namespace MasksUnleashed.API.Controllers
         /// <param name="recyclerId">ID of the Recycler (GUID)</param>
         /// <param name="amountOfMasks">Amount of infected masks</param>
         /// <returns>Sets the amount of masks the recycler is able to recycle.</returns>
-        [HttpPost("{recyclerId}/capacity")]
+        [HttpPut("{recyclerId}/capacity")]
         public Task<int> SetCapacity([FromRoute]Guid recyclerId, int amountOfMasks)
         {
             throw new NotImplementedException();
