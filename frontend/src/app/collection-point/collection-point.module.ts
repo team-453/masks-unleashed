@@ -15,6 +15,7 @@ import { CollectionsComponent } from './collections/collections.component';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { ApiInterceptor } from '../ApiInterceptor';
+import { OrderRecyclingComponent } from './order-recycling/order-recycling.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ApiInterceptor } from '../ApiInterceptor';
     CollectionPointDashboardComponent,
     ProfileFormComponent,
     CockpitComponent,
-    CollectionsComponent
+    CollectionsComponent,
+    OrderRecyclingComponent
   ],
   imports: [
     CommonModule,

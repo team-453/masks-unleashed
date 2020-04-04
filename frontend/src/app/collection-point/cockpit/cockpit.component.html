@@ -1,9 +1,17 @@
 <div class="row">
   <div class="col-lg-6 col-xs-12">
-    <mat-card class="login">
-      <mat-card-subtitle>Mein Profil</mat-card-subtitle>
+    <mat-card>
+      <mat-card-subtitle>Capacity management</mat-card-subtitle>
       <mat-card-content>
         <app-profile-form [collectorId]="collectorId"></app-profile-form>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-subtitle>Storage prognose</mat-card-subtitle>
+      <mat-card-content>
+        <app-order-recycling [collectorId]="collectorId">
+        </app-order-recycling>
       </mat-card-content>
     </mat-card>
   </div>

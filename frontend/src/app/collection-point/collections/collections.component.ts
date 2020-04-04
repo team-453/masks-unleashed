@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-collections',
@@ -13,7 +14,7 @@ export class CollectionsComponent implements OnInit {
   form: any;
   previousCollections: Collection[] = [];
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private dataService: DataServiceService) {
     this.form = this.formBuilder.group({
       collectedMasksAmount: ['', Validators.required],
     });
@@ -26,7 +27,10 @@ export class CollectionsComponent implements OnInit {
   private refreshPreviousCollections() {
     this.httpClient
       .get(`/Collector/${this.collectorId}/reception`)
-      .subscribe((data: Collection[]) => this.previousCollections = data);
+      .subscribe((data: Collection[]) => {
+        this.previousCollections = data;
+        this.dataService.collections.next(data);
+      });
   }
 
   add() {
