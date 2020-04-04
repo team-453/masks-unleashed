@@ -6,7 +6,7 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':collectorId',
     component: CollectionPointDashboardComponent,
     children: [
       {
