@@ -1,0 +1,36 @@
+<form class="user-form" [formGroup]="registerForm" (submit)="saveUser()">
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Username" autocomplete="username" formControlName="username"/>
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <mat-label>Full Name</mat-label>
+    <input matInput placeholder="Max Muster" autocomplete="name" formControlName="fullname"/>
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <mat-label>Street</mat-label>
+    <input matInput placeholder="Bahnhofstrasse 35" autocomplete="street-address" formControlName="street"/>
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <mat-label>City</mat-label>
+    <input matInput placeholder="Zürich" autocomplete="address-level2" formControlName="city"/>
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <mat-label>ZIP Code</mat-label>
+    <input matInput placeholder="8000" autocomplete="postal-code" formControlName="postal"/>
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <mat-label>User</mat-label>
+    <mat-select formControlName="usertype">
+      <mat-option value="RECYCLER">Recycler</mat-option>
+      <mat-option value="COLLECTOR">Collection Point</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br/>
+  <button mat-raised-button color="primary">Register</button>
+</form>

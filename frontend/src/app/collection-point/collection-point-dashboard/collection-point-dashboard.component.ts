@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollectionPointDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   navLinks = [
-    {
-      path: 'register',
-      label: 'Register',
-    },
     {
       path: 'cockpit',
       label: 'Cockpit',

@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 const routes: Routes = [
+  {
+    path: '', component: WelcomeComponent
+  },
   {
     path: 'collection-point-dashboard',
     loadChildren: () => import(`./collection-point/collection-point.module`).then(m => m.CollectionPointModule)

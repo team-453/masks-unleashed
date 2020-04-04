@@ -1,0 +1,10 @@
+<mat-form-field>
+  <mat-label>User</mat-label>
+  <mat-select [(value)]="selectedUser">
+    <mat-option *ngFor="let user of users | async" [value]="user">
+      {{user.username}} ({{user.userType}})
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br/>
+<button mat-raised-button color="primary" (click)="login()" [disabled]="!selectedUser">Login!</button>
