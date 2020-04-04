@@ -47,7 +47,7 @@ namespace MasksUnleashed.API.Controllers
         [HttpPut("{collectorId}/capacity")]
         public Task SetStorageCapacity(Guid collectorId, int amountOfMasks)
         {
-            throw new NotImplementedException();
+            return collectorService.SetCollectorMaskCapacity(collectorId, amountOfMasks);
         }
     }
 }

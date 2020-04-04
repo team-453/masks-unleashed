@@ -18,5 +18,17 @@ namespace MasksUnleached.Infrastructure
                 return capacity;
             }
         }
+
+        public async Task SetCollectorMaskCapacity(Guid collectorId, int newCapacity)
+        {
+            using (var context = new MasksUnleachedContext())
+            {
+                var collector = await context.CollectorUsers.FindAsync(collectorId);
+                collector.MaskStorageCapacity = newCapacity;
+                context.Update(collector);
+
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }

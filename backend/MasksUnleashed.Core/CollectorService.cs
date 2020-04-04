@@ -17,5 +17,10 @@ namespace MasksUnleashed.Core
         {
             return collectorRepository.GetCollectorMaskCapacity(collectorId);
         }
+
+        public Task SetCollectorMaskCapacity(Guid collectorId, int newCapacity)
+        {
+            return collectorRepository.SetCollectorMaskCapacity(collectorId, newCapacity);
+        }
     }
 }
