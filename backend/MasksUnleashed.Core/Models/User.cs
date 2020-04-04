@@ -11,7 +11,7 @@ namespace MasksUnleashed.Core.Models
         public string Street { get; set; }
         public string Postal { get; set; }
         /// <summary>
-        /// The type of the user. Should be one of: Customer, Collector, Recycler
+        /// The type of the user. Should be one of: CUSTOMER, COLLECTOR, RECYCLER
         /// </summary>
         public string UserType { get; set; }
     }
