@@ -4,7 +4,6 @@ import { RecyclerDashboardComponent } from './recycler-dashboard/recycler-dashbo
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 
-
 const routes: Routes = [
   {
     path: ':recyclerId',

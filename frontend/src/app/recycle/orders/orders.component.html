@@ -4,19 +4,24 @@
     <form class="user-form" [formGroup]="form" (submit)="add()">
       <mat-form-field>
         <mat-label>Recycling start date</mat-label>
-        <input matInput placeholder="01.01.2020" autocomplete="startingDate" formControlName="startingDate"/>
+        <input matInput [matDatepicker]="picker" formControlName="startingDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-      <br/>
+      <br />
       <mat-form-field>
         <mat-label>Amount</mat-label>
-        <input type="number" matInput placeholder="50" autocomplete="maskRecyclingCapacity" formControlName="maskRecyclingCapacity"/>
+        <input type="number" matInput placeholder="50" autocomplete="maskRecyclingCapacity"
+          formControlName="maskRecyclingCapacity" />
       </mat-form-field>
-      <br/>
+      <br />
       <mat-form-field>
         <mat-label>Recycling finished date</mat-label>
-        <input matInput placeholder="01.01.2020" autocomplete="endDate" formControlName="endDate"/>
+        <input matInput [matDatepicker]="picker2" formControlName="endDate">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
-      <br/>
+      <br />
       <ng-container *ngIf="!editingOrder">
         <button mat-raised-button color="primary">Add</button>
       </ng-container>
@@ -31,8 +36,8 @@
   <mat-card>
     <mat-card-subtitle>Previous orders</mat-card-subtitle>
     <mat-card-content>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <table mat-table [dataSource]="orders" class="mat-elevation-z8">
 
         <ng-container matColumnDef="startingDate">
@@ -64,4 +69,3 @@
 
 
 </ng-container>
-

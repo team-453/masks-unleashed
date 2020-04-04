@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from '../ApiInterceptor';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { ApiInterceptor } from '../ApiInterceptor';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     {
