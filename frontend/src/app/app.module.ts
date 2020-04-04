@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiInterceptor } from './ApiInterceptor';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatTabsModule,
     MatToolbarModule,
@@ -37,7 +40,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ReactiveFormsModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
