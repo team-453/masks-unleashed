@@ -10,12 +10,6 @@ export class CollectionPointDashboardComponent implements OnInit {
   constructor() {
   }
 
-  navLinks = [
-    {
-      path: 'cockpit',
-      label: 'Cockpit',
-    },
-  ];
 
   ngOnInit(): void {
   }
