@@ -1,16 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MasksUnleashed.Core.Interfaces;
 using MasksUnleashed.Core.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MasksUnleached.Infrastructure
 {
     public class UsersRepository : IUsersRepository
     {
-        public Task<IList<User>> GetAll()
+        public async Task<IList<User>> GetAll()
         {
-            IList<User> list = new List<User> {new User {Username = "maxmuster"}};
-            return Task.FromResult(list);
+            using (var context = new MasksUnleachedContext())
+            {
+                IList<User> users = await context.User.ToListAsync();
+                return users;
+            }
         }
     }
 }
