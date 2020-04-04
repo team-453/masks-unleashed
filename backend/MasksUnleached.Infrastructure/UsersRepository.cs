@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MasksUnleashed.Core.Interfaces;
 using MasksUnleashed.Core.Models;
@@ -10,11 +11,9 @@ namespace MasksUnleached.Infrastructure
     {
         public async Task<IList<User>> GetAll()
         {
-            using (var context = new MasksUnleachedContext())
-            {
-                IList<User> users = await context.User.ToListAsync();
-                return users;
-            }
+            await using var context = new MasksUnleachedContext();
+            IList<User> users = await context.User.ToListAsync();
+            return users;
         }
 
         public async Task<int> Insert(User user)
@@ -22,6 +21,13 @@ namespace MasksUnleached.Infrastructure
             await using var context = new MasksUnleachedContext();
             context.User.Add(user);
             return await context.SaveChangesAsync();
+        }
+
+        public async Task<IList<CollectorUser>> GetCollectors()
+        {
+            await using var context = new MasksUnleachedContext();
+            IList<CollectorUser> users = await context.CollectorUsers.ToListAsync();
+            return users;
         }
     }
 }

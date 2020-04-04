@@ -14,10 +14,19 @@ namespace MasksUnleached.Infrastructure
         {
             modelBuilder.HasDefaultContainer("User");
             modelBuilder.Entity<User>().ToContainer("User");
+            modelBuilder.Entity<CollectorUser>()
+                .ToContainer("User")
+                .HasDiscriminator<string>(b => b.UserType);
+            modelBuilder.Entity<RecyclerUser>()
+                .ToContainer("User")
+                .HasDiscriminator(b => b.UserType);
 
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<CollectorUser> CollectorUsers { get; set; }
+        public DbSet<RecyclerUser> RecyclerUsers { get; set; }
     }
 }

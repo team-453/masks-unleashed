@@ -19,6 +19,11 @@ namespace MasksUnleashed.Core
             return usersRepository.GetAll();
         }
 
+        public Task<IList<CollectorUser>> GetAllCollectors()
+        {
+            return usersRepository.GetCollectors();
+        }
+
         public Task Register(User user)
         {
             return usersRepository.Insert(user);

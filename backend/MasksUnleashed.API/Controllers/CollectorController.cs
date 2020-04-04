@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using MasksUnleashed.Core;
+using MasksUnleashed.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MasksUnleashed.API.Controllers
@@ -8,6 +11,19 @@ namespace MasksUnleashed.API.Controllers
     [Route("[controller]")]
     public class CollectorController : ControllerBase
     {
+        private readonly UserService userService;
+
+        public CollectorController(UserService userService)
+        {
+            this.userService = userService;
+        }
+        
+        [HttpGet]
+        public Task<IList<CollectorUser>> GetUsers()
+        {
+            return userService.GetAllCollectors();
+        }
+        
         /// <summary>
         /// Returns the storage capacity of the desired collector.
         /// </summary>

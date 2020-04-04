@@ -2,7 +2,7 @@
 
 namespace MasksUnleashed.Core.Models
 {
-    public class User
+    public abstract class User
     {
         public Guid Id { get; set; }
         public string Username { get; set; }
@@ -13,6 +13,6 @@ namespace MasksUnleashed.Core.Models
         /// <summary>
         /// The type of the user. Should be one of: CUSTOMER, COLLECTOR, RECYCLER
         /// </summary>
-        public string UserType { get; set; }
+        public virtual string UserType { get; set; }
     }
 }
