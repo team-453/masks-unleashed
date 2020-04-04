@@ -10,9 +10,9 @@ export class CollectionPointMapComponent implements OnInit {
   longitude = 8.514754;
   zoom = 14;
 
-  markers = [
-    {label: 'marker 1', latitude: 47.387084, longitude: 8.514754},
-    {label: 'marker 2', latitude: 47.388231, longitude: 8.519773}
+  markers: Marker[] = [
+    {label: 'Collection Point 2', latitude: 47.387084, longitude: 8.514754},
+    {label: 'Collection Point Hardbrücke', latitude: 47.388231, longitude: 8.519773}
   ];
 
   constructor() {
