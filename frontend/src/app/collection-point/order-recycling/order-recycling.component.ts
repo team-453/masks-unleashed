@@ -14,6 +14,7 @@ export class OrderRecyclingComponent implements OnInit {
   maxCapacity?: number;
   masksOnStorage?: number;
   remainingCleanMasks?: number;
+  criticalStorage = false;
 
   constructor(private dataService: DataServiceService) { }
 
@@ -25,6 +26,9 @@ export class OrderRecyclingComponent implements OnInit {
   private refreshCapacity() {
     this.dataService.maxCapacity
       .subscribe((maxCapacity: number) => {
+        if (this.maxCapacity && this.masksOnStorage) {
+          this.criticalStorage = true;
+        }
         this.maxCapacity = maxCapacity
         this.calculateRemainingCleanMasks();
       });
@@ -40,6 +44,9 @@ export class OrderRecyclingComponent implements OnInit {
   private refreshPreviousCollections() {
     this.dataService.collections
       .subscribe((data: Collection[]) => {
+        if (this.maxCapacity && this.masksOnStorage) {
+          this.criticalStorage = true;
+        }
         this.masksOnStorage = this.sumAmountOfMasks(data);
         this.calculateRemainingCleanMasks();
       });
