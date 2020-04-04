@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-6 col-xs-12">
+    <mat-card class="login">
+      <mat-card-subtitle>Mein Profil</mat-card-subtitle>
+      <mat-card-content>
+        <app-profile [recyclerId]="recyclerId"></app-profile>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-lg-6 col-xs-12">
+    <mat-card>
+      <mat-card-subtitle>Orders</mat-card-subtitle>
+      <mat-card-content>
+        <app-orders [recyclerId]="recyclerId"></app-orders>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

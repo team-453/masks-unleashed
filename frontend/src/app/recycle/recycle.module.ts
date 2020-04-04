@@ -6,19 +6,31 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OrdersComponent } from './orders/orders.component';
 import { RecycleRoutingModule } from './recycle-routing.module';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     RecyclerDashboardComponent,
     ProfileComponent,
-    OrdersComponent
+    OrdersComponent,
+    CockpitComponent
   ],
   imports: [
     CommonModule,
     MatToolbarModule,
     MatTabsModule,
-    RecycleRoutingModule
+    RecycleRoutingModule,
+    MatCardModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule
   ],
   exports: [
     RecycleRoutingModule

@@ -7,7 +7,7 @@ import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   {
-    path: '/:id/',
+    path: ':recyclerId',
     component: RecyclerDashboardComponent,
     children: [
       {
