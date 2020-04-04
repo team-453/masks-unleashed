@@ -6,8 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recycler-dashboard.component.scss']
 })
 export class RecyclerDashboardComponent implements OnInit {
+  constructor() {
+  }
 
-  constructor() { }
+  navLinks = [
+    {
+      path: 'profile',
+      label: 'Profile',
+    },
+    {
+      path: 'orders',
+      label: 'Orders',
+    },
+  ];
+
 
   ngOnInit(): void {
   }
