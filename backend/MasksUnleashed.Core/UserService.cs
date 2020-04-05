@@ -18,9 +18,10 @@ namespace MasksUnleashed.Core
             this.mapper = mapper;
         }
         
-        public Task<IList<User>> GetAll()
+        public async Task<IList<User>> GetAll()
         {
-            return usersRepository.GetAll();
+            var typedUsers = await usersRepository.GetAll();
+            return mapper.Map<List<User>>(typedUsers);
         }
 
         public Task<IList<CollectorUser>> GetAllCollectors()
@@ -41,6 +42,12 @@ namespace MasksUnleashed.Core
             }
             
             return usersRepository.Insert(user);
+        }
+
+        public async Task<User> GetUserById(Guid userId)
+        {
+            var typedUser = await usersRepository.GetUserById(userId);
+            return mapper.Map<User>(typedUser);
         }
     }
 }

@@ -10,5 +10,6 @@ namespace MasksUnleashed.Core.Interfaces
         Task<IList<User>> GetAll();
         Task<Guid> Insert(User user);
         Task<IList<CollectorUser>> GetCollectors();
+        Task<User> GetUserById(Guid userId);
     }
 }

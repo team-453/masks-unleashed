@@ -24,9 +24,20 @@ namespace MasksUnleashed.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public Task<IList<User>> Get()
+        public Task<IList<User>> GetAll()
         {
             return userService.GetAll();
+        }
+
+        /// <summary>
+        /// Returns the user corresponding to the userid.
+        /// </summary>
+        /// <param name="userId">UserID (GUID)</param>
+        /// <returns>Returns the user corresponding to the userid.</returns>
+        [HttpGet("{userId}")]
+        public Task<User> GetUser([FromRoute]Guid userId)
+        {
+            return userService.GetUserById(userId);
         }
 
         /// <summary>

@@ -12,7 +12,6 @@ namespace MasksUnleached.Infrastructure
         public async Task<IList<User>> GetAll()
         {
             await using var context = new MasksUnleachedContext();
-            var list = await context.CollectorUsers.ToListAsync();
             IList<User> users = await context.User.ToListAsync();
             return users;
         }
@@ -30,6 +29,12 @@ namespace MasksUnleached.Infrastructure
             await using var context = new MasksUnleachedContext();
             IList<CollectorUser> users = await context.CollectorUsers.ToListAsync();
             return users;
+        }
+
+        public async Task<User> GetUserById(Guid userId)
+        {
+            await using var context = new MasksUnleachedContext();
+            return await context.User.FindAsync(userId);
         }
     }
 }
