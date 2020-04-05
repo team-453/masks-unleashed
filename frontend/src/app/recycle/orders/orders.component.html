@@ -10,20 +10,20 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-      <br />
+      <br/>
       <mat-form-field>
         <mat-label>Amount</mat-label>
         <input type="number" matInput placeholder="50" autocomplete="maskRecyclingCapacity"
-          formControlName="maskRecyclingCapacity" />
+               formControlName="maskRecyclingCapacity"/>
       </mat-form-field>
-      <br />
+      <br/>
       <mat-form-field>
         <mat-label>Recycling finished date</mat-label>
         <input matInput [matDatepicker]="picker2" formControlName="endDate">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
-      <br />
+      <br/>
       <ng-container *ngIf="!editingOrder">
         <button mat-raised-button color="primary">Add</button>
       </ng-container>
@@ -40,8 +40,8 @@
       <h2 class="mat-title">Previous orders</h2>
     </mat-card-subtitle>
     <mat-card-content>
-      <br />
-      <br />
+      <br/>
+      <br/>
       <table mat-table [dataSource]="orders" class="mat-elevation-z8">
 
         <ng-container matColumnDef="startingDate">

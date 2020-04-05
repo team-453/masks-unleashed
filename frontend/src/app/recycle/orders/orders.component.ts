@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Order } from '../Order';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-orders',
@@ -16,12 +17,19 @@ export class OrdersComponent implements OnInit {
   orders: Order[] = [];
   editingOrder: Order;
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private snackBar: MatSnackBar) {
     this.form = this.formBuilder.group({
       acceptedOrders: [[], Validators.required],
       startingDate: ['', Validators.required],
       maskRecyclingCapacity: ['', Validators.required],
       endDate: ['', Validators.required],
+    });
+  }
+
+  private showSuccessSnackBar() {
+    this.snackBar.open('🎉 You have added an order! 🎉', '', {
+      duration: 3000,
+      verticalPosition: 'top',
     });
   }
 
@@ -44,8 +52,10 @@ export class OrdersComponent implements OnInit {
     };
     this.httpClient
       .post(`/Recycler/${this.recyclerId}/orders`, payload)
-      .subscribe(data => this.refreshOrders());
-    this.form.reset();
+      .subscribe(data => {
+        this.refreshOrders();
+        this.showSuccessSnackBar();
+      });
   }
 
   edit(order: Order) {
