@@ -1,18 +1,10 @@
 <mat-toolbar color="primary">
-  <div class="container-fluid wrapper" style="width: 100%">
-    <div class="row between-xs">
-      <div class="col">
-        SafeCycle
-      </div>
-      <div class="col">
-        <span class="role" *ngIf="isCollectorView">Collector</span>
-        <span class="role" *ngIf="isRecyclerView">Recycler</span>
-      </div>
-      <div class="col">
-        <button mat-flat-button color="primary" (click)="logout()">Logout</button>
-      </div>
-    </div>
-  </div>
+  <img src="assets/logo_white_no_background.png" style="height: 35px; margin-right: 0.5em" /><span>SafeCycle</span>
+  <span class="fill-remaining-space"></span>
+  <span class="role" *ngIf="isCollectorView">Collector</span>
+  <span class="role" *ngIf="isRecyclerView">Recycler</span>
+  <span class="fill-remaining-space"></span>
+  <button mat-flat-button color="primary" (click)="logout()">Logout</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
