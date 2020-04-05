@@ -17,6 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import { ApiInterceptor } from '../ApiInterceptor';
 import { OrderRecyclingComponent } from './order-recycling/order-recycling.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { OrderLabelsComponent } from './order-labels/order-labels.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     ProfileFormComponent,
     CockpitComponent,
     CollectionsComponent,
-    OrderRecyclingComponent
+    OrderRecyclingComponent,
+    OrderLabelsComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatCardModule,
     MatListModule,
     MatTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule
   ],
   providers: [
     {
