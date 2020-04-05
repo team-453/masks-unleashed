@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { DataServiceService } from '../data-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { OrderLabelsComponent } from '../order-labels/order-labels.component';
 
 @Component({
   selector: 'app-order-recycling',
@@ -16,7 +17,8 @@ export class OrderRecyclingComponent implements OnInit {
   remainingCleanMasks?: number;
   criticalStorage = false;
 
-  constructor(private dataService: DataServiceService) { }
+  constructor(private dataService: DataServiceService, public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     this.refreshCapacity();
@@ -27,7 +29,7 @@ export class OrderRecyclingComponent implements OnInit {
   private refreshCapacity() {
     this.dataService.maxCapacity
       .subscribe((maxCapacity: number) => {
-        this.maxCapacity = maxCapacity
+        this.maxCapacity = maxCapacity;
         this.calculateRemainingCleanMasks();
       });
   }
@@ -49,6 +51,13 @@ export class OrderRecyclingComponent implements OnInit {
 
   private sumAmountOfMasks(data: Collection[]) {
     return data.map(c => c.amountOfMasks).reduce((prev, current) => prev + current, 0);
+  }
+
+  showAvailableLabels() {
+    this.dialog.open(OrderLabelsComponent, {
+      height: '50%',
+      width: '80%'
+    });
   }
 }
 
