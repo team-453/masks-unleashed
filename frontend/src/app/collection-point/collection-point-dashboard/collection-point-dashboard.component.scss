@@ -1,3 +1,10 @@
-.container-fluid {
-	padding: 0 0.5rem 0 0.5rem;
+// .container-fluid {
+// 	padding: 0 0.5rem 0 0.5rem;
+// }
+:host {
+	display: block;
+}
+
+app-cockpit  {
+	display: block;
 }
