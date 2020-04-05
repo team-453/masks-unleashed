@@ -1,17 +1,25 @@
 <div class="row">
   <div class="col-lg-6 col-xs-12">
     <mat-card>
-      <mat-card-subtitle>
-        <h2 class="mat-title">Capacity Management</h2>
-      </mat-card-subtitle>
+      <mat-card-title-group>
+        <mat-card-title>
+          <h2 class="mat-title">Capacity Management</h2>
+        </mat-card-title>
+        <mat-card-subtitle>How many dirty masks can you store?<br />Manage your storage capacity in
+          this card.</mat-card-subtitle>
+      </mat-card-title-group>
       <mat-card-content>
         <app-profile-form [collectorId]="collectorId"></app-profile-form>
       </mat-card-content>
     </mat-card>
     <mat-card>
-      <mat-card-subtitle>
-        <h2 class="mat-title">Storage prognose</h2>
-      </mat-card-subtitle>
+      <mat-card-title-group>
+        <mat-card-title>
+          <h2 class="mat-title">Storage prognose</h2>
+        </mat-card-title>
+        <mat-card-subtitle>You see we are monitoring your storage. Don't worry, we've got your back. When you are
+          running out of space, we will send someone to pick them up.</mat-card-subtitle>
+      </mat-card-title-group>
       <mat-card-content>
         <app-order-recycling [collectorId]="collectorId"></app-order-recycling>
       </mat-card-content>
@@ -19,9 +27,13 @@
   </div>
   <div class="col-lg-6 col-xs-12">
     <mat-card>
-      <mat-card-subtitle>
-        <h2 class="mat-title">Collections</h2>
-      </mat-card-subtitle>
+      <mat-card-title-group>
+        <mat-card-title>
+          <h2 class="mat-title">Collections</h2>
+        </mat-card-title>
+        <mat-card-subtitle>Whenever you collect new dirty masks, enter the amount of masks you have receied here so we
+          can monitor your storage.</mat-card-subtitle>
+      </mat-card-title-group>
       <mat-card-content>
         <app-collections [collectorId]="collectorId"></app-collections>
       </mat-card-content>
