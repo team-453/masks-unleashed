@@ -11,15 +11,18 @@
   </mat-card-title-group>
   <mat-card-content>
     <p>Remaining Clean Masks: {{remainingCleanMasks}}</p>
-    <img mat-card-image src="assets/first_graph.png" class="forecast-image" *ngIf="!criticalStorage" />
-    <img mat-card-image src="assets/second_graph.png" class="forecast-image" *ngIf="criticalStorage" />
+    <img mat-card-image [src]="!criticalStorage ? 'assets/first_graph.png' : 'assets/second_graph.png'"
+      class="forecast-image" />
     <ng-container *ngIf="criticalStorage">
-      <div>
-        <span style="color: red">You are running low on storage. We are already on the way to pick up your
-          masks.</span>
-      </div>
-      <button color="primary" class="print-labels-button" mat-raised-button (click)="showAvailableLabels()">Print your
+      <button color="primary" style="margin-top: 1rem" class="print-labels-button" mat-raised-button
+        (click)="showAvailableLabels()">Print your
         labels</button>
+      <div>
+        <p class="mat-body-2" style="color: red; margin-top: 1rem">You are running low on storage. We are already on the
+          way to pick up
+          your
+          masks.</p>
+      </div>
     </ng-container>
   </mat-card-content>
 </mat-card>
