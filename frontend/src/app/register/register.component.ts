@@ -27,8 +27,9 @@ export class RegisterComponent {
       console.log('register', this.registerForm.value);
       this.httpClient
         .post('/user', this.registerForm.value)
-        .subscribe(data => {
-          console.log('register: ', data);
+        .subscribe(userId => {
+          const module = this.registerForm.value.usertype === 'RecyclerUser' ? 'recycler-dashboard' : 'collection-point-dashboard';
+          this.router.navigate([module, userId]);
         });
     }
   }
