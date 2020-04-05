@@ -3,3 +3,8 @@
     Every toolbar row uses a flexbox row layout. */
   flex: 1 1 auto;
 }
+
+.wrapper {
+  padding-top: 0 !important;
+  width: 100%;
+}
