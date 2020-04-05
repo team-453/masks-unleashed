@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecyclerDashboardComponent } from './recycler-dashboard/recycler-dashboard.component';
-import { ProfileComponent } from './profile/profile.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OrdersComponent } from './orders/orders.component';
@@ -24,7 +23,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     RecyclerDashboardComponent,
-    ProfileComponent,
     OrdersComponent,
     CockpitComponent,
     SuccessfullAddedOrderSnackBarComponent,
