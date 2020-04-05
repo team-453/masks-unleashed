@@ -12,6 +12,12 @@
 	"background_color": "transparent",
 	"related_applications": [],
 	"prefer_related_applications": false,
-	"icons": [],
+	"icons": [
+		{
+			"src": "assets/logo.png",
+			"sizes": "494x556",
+			"type": "image/png"
+		}
+	],
 	"url": "https://masks-unleashed.azurewebsites.net"
 }
