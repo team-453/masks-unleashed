@@ -8,6 +8,7 @@ export class DataServiceService {
 
   public maxCapacity = new Subject<number>();
   public collections = new Subject();
+  public triggerCapacityNotification = new Subject();
 
   constructor() { }
 

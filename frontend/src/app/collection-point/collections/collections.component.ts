@@ -40,7 +40,10 @@ export class CollectionsComponent implements OnInit {
     };
     this.httpClient
       .post(`/Collector/${this.collectorId}/reception`, payload)
-      .subscribe(data => this.refreshPreviousCollections());
+      .subscribe(data => {
+        this.refreshPreviousCollections();
+        this.dataService.triggerCapacityNotification.next();
+      });
   }
 }
 

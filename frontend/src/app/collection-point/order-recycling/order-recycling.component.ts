@@ -21,14 +21,12 @@ export class OrderRecyclingComponent implements OnInit {
   ngOnInit(): void {
     this.refreshCapacity();
     this.refreshPreviousCollections();
+    this.dataService.triggerCapacityNotification.subscribe(_ => this.criticalStorage = true);
   }
 
   private refreshCapacity() {
     this.dataService.maxCapacity
       .subscribe((maxCapacity: number) => {
-        if (this.maxCapacity && this.masksOnStorage) {
-          this.criticalStorage = true;
-        }
         this.maxCapacity = maxCapacity
         this.calculateRemainingCleanMasks();
       });
@@ -44,9 +42,6 @@ export class OrderRecyclingComponent implements OnInit {
   private refreshPreviousCollections() {
     this.dataService.collections
       .subscribe((data: Collection[]) => {
-        if (this.maxCapacity && this.masksOnStorage) {
-          this.criticalStorage = true;
-        }
         this.masksOnStorage = this.sumAmountOfMasks(data);
         this.calculateRemainingCleanMasks();
       });
