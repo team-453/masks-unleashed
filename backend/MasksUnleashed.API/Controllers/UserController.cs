@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MasksUnleashed.Core;
 using MasksUnleashed.Core.Models;
@@ -32,9 +33,9 @@ namespace MasksUnleashed.API.Controllers
         /// Registers a new user in the database.
         /// </summary>
         /// <param name="user"></param>
-        /// <returns></returns>
+        /// <returns>Returns the userid of the registered user.</returns>
         [HttpPost]
-        public Task Register(User user)
+        public Task<Guid> Register(User user)
         {
             return userService.Register(user);
         }

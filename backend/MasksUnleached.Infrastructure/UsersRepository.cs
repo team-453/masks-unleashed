@@ -17,11 +17,12 @@ namespace MasksUnleached.Infrastructure
             return users;
         }
 
-        public async Task<int> Insert(User user)
+        public async Task<Guid> Insert(User user)
         {
             await using var context = new MasksUnleachedContext();
             context.User.Add(user);
-            return await context.SaveChangesAsync();
+            await context.SaveChangesAsync();
+            return user.Id;
         }
 
         public async Task<IList<CollectorUser>> GetCollectors()

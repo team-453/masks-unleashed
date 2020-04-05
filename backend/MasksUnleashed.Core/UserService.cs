@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using MasksUnleashed.Core.Interfaces;
@@ -27,7 +28,7 @@ namespace MasksUnleashed.Core
             return usersRepository.GetCollectors();
         }
 
-        public Task Register(User user)
+        public Task<Guid> Register(User user)
         {
             switch (user.UserType)
             {
