@@ -4,7 +4,7 @@
   <span class="role" *ngIf="isCollectorView">Collector</span>
   <span class="role" *ngIf="isRecyclerView">Recycler</span>
   <span class="fill-remaining-space"></span>
-  <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+  <button mat-flat-button color="primary" (click)="logout()" *ngIf="isRecyclerView || isCollectorView">Logout</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
