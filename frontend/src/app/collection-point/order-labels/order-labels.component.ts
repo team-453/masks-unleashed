@@ -11,9 +11,9 @@ export class OrderLabelsComponent implements OnInit {
   }
 
   availableLabels = [
-    { bagType: '65L', maskType: 'FFP2', ordered: false, recycler: "Recycler 1" },
-    { bagType: '120L', maskType: 'N95', ordered: false, recycler: "Recycler 2" },
-    { bagType: '120L', maskType: 'Surgical', ordered: false, recycler: "Recycler 2" },
+    { bagType: '65L', maskType: 'FFP2', ordered: false, recycler: "Recycling AG" },
+    { bagType: '120L', maskType: 'N95', ordered: false, recycler: "EPFL" },
+    { bagType: '120L', maskType: 'Surgical', ordered: false, recycler: "ETH Zürich" },
   ];
 
   ngOnInit(): void {
