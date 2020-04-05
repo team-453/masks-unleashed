@@ -1,5 +1,7 @@
 <mat-card>
-  <mat-card-subtitle>New Order</mat-card-subtitle>
+  <mat-card-subtitle>
+    <h2 class="mat-title">New order</h2>
+  </mat-card-subtitle>
   <mat-card-content>
     <form class="user-form" [formGroup]="form" (submit)="add()">
       <mat-form-field>
@@ -34,7 +36,9 @@
 </mat-card>
 <ng-container *ngIf="!editingOrder">
   <mat-card>
-    <mat-card-subtitle>Previous orders</mat-card-subtitle>
+    <mat-card-subtitle>
+      <h2 class="mat-title">Previous orders</h2>
+    </mat-card-subtitle>
     <mat-card-content>
       <br />
       <br />

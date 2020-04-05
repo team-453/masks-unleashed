@@ -1,13 +1,17 @@
 <div class="row">
   <div class="col-lg-6 col-xs-12">
     <mat-card>
-      <mat-card-subtitle>Capacity management</mat-card-subtitle>
+      <mat-card-subtitle>
+        <h2 class="mat-title">Capacity Management</h2>
+      </mat-card-subtitle>
       <mat-card-content>
         <app-profile-form [collectorId]="collectorId"></app-profile-form>
       </mat-card-content>
     </mat-card>
     <mat-card>
-      <mat-card-subtitle>Storage prognose</mat-card-subtitle>
+      <mat-card-subtitle>
+        <h2 class="mat-title">Storage prognose</h2>
+      </mat-card-subtitle>
       <mat-card-content>
         <app-order-recycling [collectorId]="collectorId"></app-order-recycling>
       </mat-card-content>
@@ -15,7 +19,9 @@
   </div>
   <div class="col-lg-6 col-xs-12">
     <mat-card>
-      <mat-card-subtitle>Collections</mat-card-subtitle>
+      <mat-card-subtitle>
+        <h2 class="mat-title">Collections</h2>
+      </mat-card-subtitle>
       <mat-card-content>
         <app-collections [collectorId]="collectorId"></app-collections>
       </mat-card-content>
