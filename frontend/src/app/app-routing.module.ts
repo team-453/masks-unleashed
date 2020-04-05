@@ -8,11 +8,11 @@ const routes: Routes = [
     path: '', component: WelcomeComponent
   },
   {
-    path: 'collection-point-dashboard',
+    path: 'collector',
     loadChildren: () => import(`./collection-point/collection-point.module`).then(m => m.CollectionPointModule)
   },
-  {path: 'recycler-dashboard', loadChildren: () => import(`./recycle/recycle.module`).then(m => m.RecycleModule)},
-  {path: 'user-dashboard', loadChildren: () => import(`./customer/customer.module`).then(m => m.CustomerModule)},
+  {path: 'recycler', loadChildren: () => import(`./recycle/recycle.module`).then(m => m.RecycleModule)},
+  {path: 'user', loadChildren: () => import(`./customer/customer.module`).then(m => m.CustomerModule)},
 ];
 
 @NgModule({

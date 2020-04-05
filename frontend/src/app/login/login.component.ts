@@ -17,7 +17,7 @@ export class LoginComponent {
   }
 
   login() {
-    const module = this.selectedUser.userType === 'RecyclerUser' ? 'recycler-dashboard' : 'collection-point-dashboard';
+    const module = this.selectedUser.userType === 'RecyclerUser' ? 'recycler' : 'collector';
     this.router.navigate([module, this.selectedUser.id]);
   }
 }
@@ -27,3 +27,5 @@ interface User {
   userType: string;
   id: string;
 }
+
+

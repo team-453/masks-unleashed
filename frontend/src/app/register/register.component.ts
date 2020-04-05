@@ -28,7 +28,7 @@ export class RegisterComponent {
       this.httpClient
         .post('/user', this.registerForm.value)
         .subscribe(userId => {
-          const module = this.registerForm.value.usertype === 'RecyclerUser' ? 'recycler-dashboard' : 'collection-point-dashboard';
+          const module = this.registerForm.value.usertype === 'RecyclerUser' ? 'recycler' : 'collector';
           this.router.navigate([module, userId]);
         });
     }
