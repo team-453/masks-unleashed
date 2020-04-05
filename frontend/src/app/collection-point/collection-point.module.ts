@@ -16,6 +16,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { ApiInterceptor } from '../ApiInterceptor';
 import { OrderRecyclingComponent } from './order-recycling/order-recycling.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { OrderRecyclingComponent } from './order-recycling/order-recycling.compo
     MatInputModule,
     MatCardModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatBadgeModule
   ],
   providers: [
     {

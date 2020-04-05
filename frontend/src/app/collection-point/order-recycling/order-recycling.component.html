@@ -1,2 +1,18 @@
-<p>Remaining Clean Masks: {{remainingCleanMasks}}</p>
-<span *ngIf="criticalStorage">We're running low on storage...</span>
+<mat-card matBadge="!" matBadgeColor="warn" matBadgeSize="large" matBadgePosition="above after" matBadgeOverlap="true"
+	matBadgeDescription="Test" [matBadgeHidden]="!criticalStorage">
+	<mat-card-title-group>
+		<mat-card-title>
+			<h2 class="mat-title">Storage Forecast</h2>
+		</mat-card-title>
+		<mat-card-subtitle>You see we are monitoring your storage. Don't worry, we've got your back. When you are
+			running out of space, we will send someone to pick them up.<br />
+			<span style="color: red" *ngIf="criticalStorage">You are running low on storage. We are already on the way to
+				pick up your masks.</span>
+		</mat-card-subtitle>
+	</mat-card-title-group>
+	<mat-card-content>
+		<p>Remaining Clean Masks: {{remainingCleanMasks}}</p>
+		<img mat-card-image src="assets/first_graph.png" class="forecast-image" *ngIf="!criticalStorage" />
+		<img mat-card-image src="assets/second_graph.png" class="forecast-image" *ngIf="criticalStorage" />
+	</mat-card-content>
+</mat-card>
