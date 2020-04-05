@@ -1,7 +1,16 @@
 <div class="wrapper">
 
   <agm-map [latitude]="latitude" [zoom]="zoom" [longitude]="longitude" [mapTypeId]="'satellite'">
-    <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude" [label]="{color: 'white', text: marker.label}"></agm-marker>
+    <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude"
+      (mouseOut)="onMouseOut(infoWindow, $event)" (mouseOver)="onMouseOver(infoWindow, $event)">
+
+      <agm-info-window [disableAutoPan]="false" #infoWindow>
+        <h2>{{marker.label}}</h2>
+        <div><strong>Name</strong> {{marker.label}}</div><br />
+        <div><strong>Opening Times</strong> {{marker.openingTimes}}</div><br />
+        <div><strong>Reviews</strong> {{marker.reviews}}</div>
+      </agm-info-window>
+    </agm-marker>
   </agm-map>
 
 </div>
