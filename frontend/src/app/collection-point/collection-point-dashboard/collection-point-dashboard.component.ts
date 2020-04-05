@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-collection-point-dashboard',
@@ -7,11 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollectionPointDashboardComponent implements OnInit {
 
-  constructor() {
+  name: string;
+  constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient) {
   }
 
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe(params => {
+      const collectorId = params.get('collectorId');
+      this.httpClient.get(`/user/${collectorId}`)
+        .subscribe((data: User) => this.name = data.fullname);
+    });
   }
+}
 
+
+interface User {
+  fullname: string;
 }
