@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   <img src="assets/logo_white_no_background.png" style="height: 35px; margin-right: 0.5em" /><span>SafeCycle</span>
   <span class="fill-remaining-space"></span>
-  <span class="role" *ngIf="isCollectorView">Collector</span>
-  <span class="role" *ngIf="isRecyclerView">Recycler</span>
+  <span class="role" *ngIf="isCollectorView">You're a Collector</span>
+  <span class="role" *ngIf="isRecyclerView">You're a Recycler</span>
   <span class="fill-remaining-space"></span>
   <button mat-flat-button color="primary" (click)="logout()" *ngIf="isRecyclerView || isCollectorView">Logout</button>
 </mat-toolbar>
