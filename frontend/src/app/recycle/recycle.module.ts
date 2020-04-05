@@ -17,6 +17,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from '../ApiInterceptor';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SuccessfullAddedOrderSnackBarComponent } from './successfull-added-order-snack-bar/successfull-added-order-snack-bar.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ProfileComponent,
     OrdersComponent,
     CockpitComponent,
+    SuccessfullAddedOrderSnackBarComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +41,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [
     {
