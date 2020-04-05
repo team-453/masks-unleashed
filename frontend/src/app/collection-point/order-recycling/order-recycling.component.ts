@@ -54,10 +54,7 @@ export class OrderRecyclingComponent implements OnInit {
   }
 
   showAvailableLabels() {
-    this.dialog.open(OrderLabelsComponent, {
-      height: '50%',
-      width: '80%'
-    });
+    this.dialog.open(OrderLabelsComponent);
   }
 }
 

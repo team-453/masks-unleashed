@@ -19,6 +19,7 @@ import { OrderRecyclingComponent } from './order-recycling/order-recycling.compo
 import { MatBadgeModule } from '@angular/material/badge';
 import { OrderLabelsComponent } from './order-labels/order-labels.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     MatTableModule,
     MatBadgeModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [
     {

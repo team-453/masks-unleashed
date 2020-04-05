@@ -1,4 +1,8 @@
 <h2>Print your labels</h2>
+<p class="mat-small">We are already on the way to pick up your masks and have prepare the address labels for
+  you.<br />Print them out and
+  paste
+  them on the corresponding bags.</p>
 <table mat-table [dataSource]="availableLabels" class="mat-elevation-z8">
 
   <ng-container matColumnDef="bagType">
@@ -11,15 +15,22 @@
     <td mat-cell *matCellDef="let label"> {{label.maskType}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="recycler">
+    <th mat-header-cell *matHeaderCellDef>Recycler</th>
+    <td mat-cell *matCellDef="let label" matTooltip="This recycler was certified by the Swiss Medic Association">
+      {{label.recycler}} ✔️</td>
+  </ng-container>
+
   <ng-container matColumnDef="label">
     <th mat-header-cell *matHeaderCellDef>Label</th>
     <td mat-cell *matCellDef="let label">
-      <a mat-raised-button *ngIf="!label.ordered" color="primary" href="assets/Recycling_Label.pdf" target="_blank" (click)="order(label)">Order</a>
-      <span mat-flat-button *ngIf="label.ordered" style="color: green">Label ordered&nbsp;&nbsp;</span>
-      <a mat-raised-button *ngIf="label.ordered" color="primary" href="assets/Recycling_Label.pdf" target="_blank">Print</a>
+      <a mat-raised-button *ngIf="!label.ordered" color="primary" href="assets/Recycling_Label.pdf" target="_blank"
+        (click)="order(label)" matTooltip="A slot will be booked for you at a certified recycler">Get Label</a>
+      <a mat-raised-button *ngIf="label.ordered" color="primary" href="assets/Recycling_Label.pdf"
+        target="_blank">Print</a>
     </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="['bagType', 'maskType', 'label']"></tr>
-  <tr mat-row *matRowDef="let row; columns: ['bagType', 'maskType', 'label'];"></tr>
+  <tr mat-header-row *matHeaderRowDef="['bagType', 'maskType', 'recycler', 'label']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['bagType', 'maskType', 'recycler', 'label'];"></tr>
 </table>
