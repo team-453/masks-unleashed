@@ -38,9 +38,11 @@ steps:
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'demo'
-    scannerMode: 'MSBuild'
-    projectKey: 'Testproject'
-    projectName: 'Testproject'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'Testproject'
+    cliProjectName: 'Testproject'
+    cliSources: './backend/MasksUnleashed.API'
 - task: SonarQubeAnalyze@4
 - task: SonarQubePublish@4
   inputs:
