@@ -42,7 +42,7 @@ steps:
     configMode: 'manual'
     cliProjectKey: 'Testproject'
     cliProjectName: 'Testproject'
-    cliSources: './backend/MasksUnleashed.API'
+    cliSources: './backend'
 - task: SonarQubeAnalyze@4
 - task: SonarQubePublish@4
   inputs:
