@@ -35,6 +35,16 @@ steps:
     command: 'publish'
     publishWebProjects: true
     arguments: '-r win-x86 --self-contained true --configuration $(BuildConfiguration) -o $(Build.ArtifactStagingDirectory).zip'
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'demo'
+    scannerMode: 'MSBuild'
+    projectKey: 'Testproject'
+    projectName: 'Testproject'
+- task: SonarQubeAnalyze@4
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
 - task: PublishBuildArtifacts@1
   displayName: "Publish Build Artifact to Deployment Container"
   inputs:
